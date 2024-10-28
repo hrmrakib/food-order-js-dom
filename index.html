@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar with Cart Drawer</title>
+    <title>Food</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100">
     <header>
-        <nav class="bg-white shadow-lg">
-            <div class="max-w-2xl mx-auto px-4">
+        <nav class="bg-rose-300 shadow">
+            <div class="w-[70%] mx-auto px-4">
                 <div class="flex justify-between">
                     <div>
                         <a href="#" class="flex items-center py-4 px-2">
-                            <span class="font-semibold text-gray-500 text-lg">LOGO</span>
+                            <img class="h-8" src="./assets/chilis.png" alt="">
                         </a>
                     </div>
 
-                    <div class="flex space-x-7">
+                    <div class="flex space-x-10">
                         <div class="hidden md:flex items-center space-x-1">
                             <a href="#"
                                 class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Home</a>
@@ -43,6 +43,21 @@
             </div>
         </nav>
 
+        <!-- Cart  -->
+        <div class="w-[70%] mx-auto my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-gray-200 rounded-lg shadow-lg p-4">
+                <img class="w-full h-48 object-cover" src="./assets/food1.jpg" alt="food1">
+                <h2 class="text-3xl font-bold mt-4">Checken</h2>
+                <p class="text-lg font-semibold mt-1">$56 / piece</p>
+                <p>Chili's Grill & Bar is an American casual dining restaurant chain founded by Larry Lavine and is
+                    currently owned and operated by Brinker International.</p>
+                <button class="block w-full bg-red-500 text-white px-4 py-2 rounded-lg mt-4">Add to cart</button>
+                <button
+                    class="block w-full bg-transparent text-black border-2 border-red-500 px-4 py-2 rounded-lg mt-4">Customize</button>
+            </div>
+
+        </div>
+
     </header>
 
     <!-- Cart Drawer -->
@@ -61,30 +76,7 @@
         </div>
     </div>
 
-    <script>
-        const cartBtn = document.getElementById('cartBtn');
-        const closeCartBtn = document.getElementById('closeCartBtn');
-        const cartDrawer = document.getElementById('cartDrawer');
-        const cartItems = document.getElementById('cartItems');
-
-        function toggleCart() {
-            cartDrawer.classList.toggle('translate-x-full');
-        }
-
-        cartBtn.addEventListener('click', toggleCart);
-        closeCartBtn.addEventListener('click', toggleCart);
-
-        // Sample function to add items to the cart
-        function addToCart(item) {
-            const li = document.createElement('li');
-            li.textContent = item;
-            cartItems.appendChild(li);
-        }
-
-        // Sample usage
-        addToCart('Product 1');
-        addToCart('Product 2');
-    </script>
+    <script src="./scripts/app.js"></script>
 </body>
 
 </html>
